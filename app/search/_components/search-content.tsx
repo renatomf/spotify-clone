@@ -1,5 +1,6 @@
 "use client";
 
+import LikeButton from "@/components/like-button";
 import MediaItem from "@/components/media-item";
 import { Song } from "@/types";
 
@@ -31,7 +32,7 @@ const SearchContent = ({
               data={song}
             />
           </div>
-          {/*TODO: Add Like Button Here*/}
+          <LikeButton songId={song.id} />
         </div>
       ))}
     </div>

@@ -10,7 +10,7 @@ interface ListItemProps {
   href: string;
 }
 
-export const ListItem = ({
+const ListItem = ({
   image,
   name,
   href
@@ -44,3 +44,5 @@ export const ListItem = ({
     </button>
   );
 }
+
+export default ListItem;

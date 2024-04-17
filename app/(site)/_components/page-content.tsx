@@ -2,6 +2,7 @@
 
 import { Song } from "@/types";
 import SongItem from "./song-item";
+import useOnPlay from "@/hooks/use-on-play";
 
 interface PageContentProps {
   songs: Song[];
@@ -10,6 +11,8 @@ interface PageContentProps {
 const PageContent = ({
   songs
 }: PageContentProps) => {
+  const onPlay = useOnPlay(songs);
+
   if (songs.length === 0) {
     return (
       <div className=" mt-4 text-neutral-400">
@@ -23,7 +26,7 @@ const PageContent = ({
       {songs.map((item) => (
         <SongItem
           key={item.id}
-          onClick={() => { }}
+          onClick={(id: string) => onPlay(id)}
           data={item}
         />
       ))}
